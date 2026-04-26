@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopSphere – Upgrade Your World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="header" id="header">
+  <div class="header-inner container">
+    <a href="#" class="logo" onclick="showPage('home')">
+      <span class="logo-icon">◈</span>
+      <span class="logo-text">ShopSphere</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a class="nav-link active" onclick="showPage('home')" href="#">Home</a>
+      <a class="nav-link" onclick="showPage('products')" href="#">Products</a>
+      <a class="nav-link" onclick="showPage('about')" href="#">About</a>
+      <a class="nav-link cart-nav" onclick="showPage('cart')" href="#">
+        Cart
+        <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="search-wrap">
+        <input type="text" id="searchInput" placeholder="Search products…" autocomplete="off"/>
+        <button class="search-btn" onclick="handleSearch()">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </div> 
+      <button class="hamburger" id="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HOME PAGE ===================== -->
+<main id="page-home" class="page active">
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content container">
+      <div class="hero-text">
+        <span class="hero-badge">New Season Arrivals</span>
+        <h1 class="hero-title">Upgrade Your<br/><em>Style &amp; Essentials</em></h1>
+        <p class="hero-sub">Discover thousands of premium products curated just for you. Quality meets affordability.</p>
+        <div class="hero-btns">
+          <button class="btn btn-primary" onclick="showPage('products')">Shop Now</button>
+          <button class="btn btn-outline" onclick="scrollToCategories()">Explore Categories</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-float card-1">
+          <img src="https://picsum.photos/seed/shoe1/120/120" alt=""/>
+          <span>Trending</span>
+        </div>
+        <div class="hero-card-float card-2">
+          <img src="https://picsum.photos/seed/bag2/120/120" alt=""/>
+          <span>Best Seller</span>
+        </div>
+        <div class="hero-orb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Quick Cards -->
+  <section class="categories-section" id="categoriesSection">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Shop by Category</h2>
+        <p class="section-sub">Find exactly what you're looking for</p>
+      </div>
+      <div class="categories-grid">
+        <div class="cat-card" onclick="filterAndGo('Stationery')">
+          <div class="cat-icon">✏️</div>
+          <h3>Stationery</h3>
+          <p>Pens, Notebooks &amp; More</p>
+        </div>
+        <div class="cat-card" onclick="filterAndGo('Clothes')">
+          <div class="cat-icon">👕</div>
+          <h3>Clothes</h3>
+          <p>Shirts, Tees &amp; More</p>
+        </div>
+        <div class="cat-card" onclick="filterAndGo('Shoes')">
+          <div class="cat-icon">👟</div>
+          <h3>Shoes</h3>
+          <p>Sneakers, Boots &amp; More</p>
+        </div>
+        <div class="cat-card" onclick="filterAndGo('Men')">
+          <div class="cat-icon">🧔</div>
+          <h3>Men</h3>
+          <p>Fashion &amp; Accessories</p>
+        </div>
+        <div class="cat-card" onclick="filterAndGo('Women')">
+          <div class="cat-icon">👩</div>
+          <h3>Women</h3>
+          <p>Kurtas, Sarees &amp; More</p>
+        </div>
+        <div class="cat-card" onclick="filterAndGo('Kids')">
+          <div class="cat-icon">🧒</div>
+          <h3>Kids</h3>
+          <p>Toys, Bags &amp; Clothes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="featured-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Products</h2>
+        <a href="#" class="see-all-link" onclick="showPage('products')">See All →</a>
+      </div>
+      <div class="products-grid" id="featuredGrid"></div>
+    </div>
+  </section>
+ 
+
+</main>
+
+<!-- ===================== PRODUCTS PAGE ===================== -->
+<main id="page-products" class="page">
+  <div class="container products-layout">
+
+    <!-- Sidebar Filters -->
+    <aside class="filter-sidebar" id="filterSidebar">
+      <div class="filter-header">
+        <h3>Filters</h3>
+        <button class="clear-btn" onclick="clearFilters()">Clear All</button>
+      </div>
+
+      <div class="filter-group">
+        <h4>Category</h4>
+        <label class="filter-check"><input type="checkbox" value="All" id="catAll" checked onchange="applyFilters()"/> All</label>
+        <label class="filter-check"><input type="checkbox" value="Stationery" onchange="applyFilters()"/> Stationery</label>
+        <label class="filter-check"><input type="checkbox" value="Clothes" onchange="applyFilters()"/> Clothes</label>
+        <label class="filter-check"><input type="checkbox" value="Shoes" onchange="applyFilters()"/> Shoes</label>
+        <label class="filter-check"><input type="checkbox" value="Men" onchange="applyFilters()"/> Men</label>
+        <label class="filter-check"><input type="checkbox" value="Women" onchange="applyFilters()"/> Women</label>
+        <label class="filter-check"><input type="checkbox" value="Kids" onchange="applyFilters()"/> Kids</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Price Range</h4>
+        <select id="priceFilter" onchange="applyFilters()" class="filter-select">
+          <option value="all">All Prices</option>
+          <option value="under500">Under ₹500</option>
+          <option value="500-1000">₹500 – ₹1000</option>
+          <option value="1000-2000">₹1000 – ₹2000</option>
+          <option value="above2000">Above ₹2000</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <h4>Sort By</h4>
+        <select id="sortFilter" onchange="applyFilters()" class="filter-select">
+          <option value="default">Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Best Rating</option>
+          <option value="newest">Newest</option>
+        </select>
+      </div>
+    </aside>
+
+    <!-- Products Main -->
+    <div class="products-main">
+      <div class="products-toolbar">
+        <p id="productCount" class="result-count">Showing all products</p>
+        <button class="filter-toggle-btn" onclick="toggleFilterSidebar()">⚙ Filters</button>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </div>
+</main>
+
+<!-- ===================== CART PAGE ===================== -->
+<main id="page-cart" class="page">
+  <div class="container cart-layout">
+    <h2 class="page-title">Your Cart</h2>
+    <div class="cart-inner">
+      <div class="cart-items-wrap" id="cartItemsWrap"></div>
+      <aside class="cart-summary" id="cartSummary"></aside>
+    </div>
+  </div>
+</main>
+
+<!-- ===================== CHECKOUT PAGE ===================== -->
+<main id="page-checkout" class="page">
+  <div class="container checkout-wrap">
+    <h2 class="page-title">Checkout</h2>
+    <div class="checkout-grid">
+      <form class="checkout-form" id="checkoutForm" onsubmit="placeOrder(event)">
+        <h3>Delivery Details</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="cName" placeholder="Rahul Sharma" required/>
+          </div>
+          <div class="form-group">
+            <label>Mobile Number *</label>
+            <input type="tel" id="cPhone" placeholder="9876543210" required pattern="[0-9]{10}"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Address *</label>
+          <textarea id="cAddress" rows="2" placeholder="House No., Street, Area" required></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>City *</label>
+            <input type="text" id="cCity" placeholder="Mumbai" required/>
+          </div>
+          <div class="form-group">
+            <label>Pincode *</label>
+            <input type="text" id="cPin" placeholder="400001" required pattern="[0-9]{6}"/>
+          </div>
+        </div>
+        <h3 class="mt-2">Payment Method</h3>
+        <div class="payment-option selected">
+          <input type="radio" name="payment" value="cod" id="codOption" checked/>
+          <label for="codOption">
+            <span class="payment-icon">💵</span>
+            <div>
+              <strong>Cash on Delivery (COD)</strong>
+              <p>Pay when your order arrives</p>
+            </div>
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Place Order</button>
+      </form>
+
+      <div class="checkout-order-summary" id="checkoutSummary"></div>
+    </div>
+  </div>
+</main>
+
+<!-- ===================== ABOUT PAGE ===================== -->
+<main id="page-about" class="page">
+  <div class="about-hero">
+    <div class="container">
+      <h1 class="about-title">About <span>ShopSphere</span></h1>
+      <p>Your one-stop destination for premium products at great prices.</p>
+    </div>
+  </div>
+
+  <div class="container about-content">
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-icon">🌐</div>
+        <h3>Our Story</h3>
+        <p>ShopSphere was founded in 2020 with a simple idea: make quality products accessible to everyone. From stationery to fashion, we curate the best products across all categories to ensure you always find what you need.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon">🎯</div>
+        <h3>Our Mission</h3>
+        <p>To deliver an unparalleled shopping experience with authentic products, competitive prices, and fast delivery. We believe shopping should be joyful, simple, and trustworthy.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon">💎</div>
+        <h3>Our Values</h3>
+        <p>Quality over quantity. Customer satisfaction above all. We carefully vet every product on our platform to ensure it meets our high standards for durability and design.</p>
+      </div>
+    </div>
+
+    <div class="about-stats">
+      <div class="stat-card"><span class="stat-num">50K+</span><p>Happy Customers</p></div>
+      <div class="stat-card"><span class="stat-num">1000+</span><p>Products Listed</p></div>
+      <div class="stat-card"><span class="stat-num">4.8★</span><p>Average Rating</p></div>
+      <div class="stat-card"><span class="stat-num">100+</span><p>Cities Served</p></div>
+    </div>
+
+    <div class="contact-section">
+      <h2>Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span>📧</span>
+          <div><strong>Email Support</strong><p>tousifwebwork@gmail.com</p></div>
+        </div>
+        <div class="contact-item">
+          <span>📞</span>
+          <div><strong>Phone Support</strong><p>+91 7776069948</p></div>
+        </div>
+        <div class="contact-item">
+          <span>⏰</span>
+          <div><strong>Working Hours</strong><p>Mon – Sat: 9 AM – 7 PM</p></div>
+        </div>
+        <div class="contact-item">
+          <span>📍</span>
+          <div><strong>Headquarters</strong><p>RIT Goa, India</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-section">
+      <h2>Meet Our Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="https://picsum.photos/seed/person1/100/100" alt="Aarav Shah"/>
+          <h4>Mohammad Tousif</h4>
+          <p>Founder &amp; CEO</p>
+        </div>
+        <div class="team-card">
+          <img src="https://picsum.photos/seed/person2/100/100" alt="Priya Nair"/>
+          <h4>Manish Sharma</h4>
+          <p>Head of Products</p>
+        </div>
+        <div class="team-card">
+          <img src="https://picsum.photos/seed/person3/100/100" alt="Rohan Mehta"/>
+          <h4>Laxmi</h4>
+          <p>Lead Developer</p>
+        </div>
+        <div class="team-card">
+          <img src="https://picsum.photos/seed/person4/100/100" alt="Sneha Kapoor"/>
+          <h4>Prapti</h4>
+          <p>Marketing Director</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="#" onclick="showPage('home')">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">ShopSphere</span>
+      </a>
+      <p>Your premium destination for everything you love. Quality products, unbeatable prices.</p>
+      <div class="social-links">
+        <a href="#" class="social-icon" title="Facebook">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="social-icon" title="Instagram">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="social-icon" title="Twitter">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('products')">Products</a></li>
+        <li><a href="#" onclick="showPage('cart')">Cart</a></li>
+        <li><a href="#" onclick="showPage('about')">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="#" onclick="filterAndGo('Stationery')">Stationery</a></li>
+        <li><a href="#" onclick="filterAndGo('Clothes')">Clothes</a></li>
+        <li><a href="#" onclick="filterAndGo('Shoes')">Shoes</a></li>
+        <li><a href="#" onclick="filterAndGo('Men')">Men</a></li>
+        <li><a href="#" onclick="filterAndGo('Women')">Women</a></li>
+        <li><a href="#" onclick="filterAndGo('Kids')">Kids</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p>Get the latest deals straight to your inbox.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Enter your email"/>
+        <button class="btn btn-primary">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© tousifwebwork 2026 ShopSphere. All rights reserved. Made with ❤️ in India.</p>
+  </div>
+</footer>
+
+<!-- ===================== MODALS & OVERLAYS ===================== -->
+
+<!-- Quick View Modal -->
+<div class="modal-overlay" id="quickViewModal" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+
+<!-- Order Success Modal -->
+<div class="modal-overlay" id="orderModal" onclick="closeOrderModal()">
+  <div class="modal-box order-modal" onclick="event.stopPropagation()">
+    <div class="order-success-anim">✅</div>
+    <h2>Order Placed Successfully!</h2>
+    <div id="orderDetails"></div>
+    <button class="btn btn-primary" onclick="closeOrderModal()">Continue Shopping</button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
