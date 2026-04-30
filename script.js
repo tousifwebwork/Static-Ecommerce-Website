@@ -363,6 +363,64 @@ function filterAndGo(cat) {
   showPage('products');
 }
 
+
+(function(){
+  emailjs.init("JTgC8cHha6j_jVukz"); // 🔥 put your real key here
+})();
+
+function FormFunction(e){
+  e.preventDefault(); 
+  const form = e.target;
+
+  const spinner = document.getElementById("spinner");
+  const btn = form.querySelector("button");
+  const email = document.getElementById('feedback-email').value.trim();
+  const message = document.getElementById('feedback-message').value.trim();
+  
+
+  if( !email || !message){
+    showToast('⚠️ Please fill in all fields');
+    return;
+  }
+
+
+  // 🔄 show spinner + disable button
+  spinner.style.display = "inline-block";
+  btn.disabled = true;
+  btn.innerText = "Sending...";
+
+
+
+  emailjs.sendForm(
+    "service_0intr9d",   // from EmailJS
+    "template_3v1nchm",  // from EmailJS 
+    form
+  )
+  .then(() => {
+    spinner.style.display = "none";
+    btn.disabled = false;
+    btn.innerText = "Subscribe";
+    showToast("✅ Message sent!");
+    form.reset();
+  })
+  .catch(() => {
+    spinner.style.display = "none";
+    btn.disabled = false;
+    btn.innerText = "Subscribe";
+    showToast("❌ Failed to send");
+  });
+
+}
+
+
+
+
+
+
+
+
+
+
 // ─────────────────────────────────────────────
 // PRODUCT CARD HTML
 // ─────────────────────────────────────────────

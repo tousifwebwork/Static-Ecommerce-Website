@@ -1020,8 +1020,28 @@ input, select, textarea { font-family: var(--font); }
 }
 .footer-col ul li a:hover { color: var(--primary); }
 
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ddd;
+  border-top: 3px solid #000; /* spinner color */
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite; 
+  margin-top: 10px;
+  margin-left: 140px;
+  display: none; 
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
 .newsletter-form { margin-top: 12px; display: flex; gap: 8px; flex-direction: column; }
-.newsletter-form input {
+.newsletter-form input, .newsletter-form textarea {
   padding: 10px 14px;
   border: 1.5px solid rgba(255,255,255,.2);
   border-radius: var(--radius-sm);
@@ -1031,8 +1051,8 @@ input, select, textarea { font-family: var(--font); }
   outline: none;
   transition: border-color var(--transition);
 }
-.newsletter-form input::placeholder { color: rgba(255,255,255,.4); }
-.newsletter-form input:focus { border-color: var(--primary); }
+.newsletter-form input::placeholder, .newsletter-form textarea::placeholder { color: rgba(255,255,255,.4); }
+.newsletter-form input:focus, .newsletter-form textarea:focus { border-color: var(--primary); }
 .newsletter-form .btn { border-radius: var(--radius-sm); padding: 10px 20px; }
 .footer-col p { font-size: .82rem; color: rgba(255,255,255,.5); margin-bottom: 8px; }
 

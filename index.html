@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -331,6 +332,8 @@
   </div>
 </main>
 
+
+
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="container footer-grid">
@@ -352,6 +355,9 @@
         </a>
       </div>
     </div>
+
+
+    
 
     <div class="footer-col">
       <h4>Quick Links</h4>
@@ -377,12 +383,18 @@
 
     <div class="footer-col">
       <h4>Newsletter</h4>
-      <p>Get the latest deals straight to your inbox.</p>
+      <p>Feed your curiosity with the latest requrements.</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="Enter your email"/>
-        <button class="btn btn-primary">Subscribe</button>
+        <form action="" class="newsletter-form" onsubmit="FormFunction(event)">
+          <textarea name="feedback-message" id="feedback-message" placeholder="Type your message here..." rows="3"></textarea> 
+          <input type="email" name="feedback-email" id="feedback-email" placeholder="Enter your email"/>
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+        <div id="spinner" class="spinner"></div>
       </div>
     </div>
+
+
   </div>
   <div class="footer-bottom">
     <p>© tousifwebwork 2026 ShopSphere. All rights reserved. Made with ❤️ in India.</p>
@@ -412,6 +424,8 @@
 <!-- Toast -->
 <div class="toast" id="toast"></div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
