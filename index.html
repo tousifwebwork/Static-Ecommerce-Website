@@ -75,46 +75,47 @@
   </section>
 
   <!-- Category Quick Cards -->
-  <section class="categories-section" id="categoriesSection">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Shop by Category</h2>
-        <p class="section-sub">Find exactly what you're looking for</p>
+   
+<section class="categories-section" id="categoriesSection">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Shop by Category</h2>
+      <p class="section-sub">Find exactly what you're looking for</p>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card" onclick="filterAndGo('Apple')">
+        <img class="cat-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apple.svg" alt="Apple logo">
+        <h3>Apple</h3>
+        <p>iPhones, iPads &amp; More</p>
       </div>
-      <div class="categories-grid">
-        <div class="cat-card" onclick="filterAndGo('Stationery')">
-          <div class="cat-icon">✏️</div>
-          <h3>Stationery</h3>
-          <p>Pens, Notebooks &amp; More</p>
-        </div>
-        <div class="cat-card" onclick="filterAndGo('Clothes')">
-          <div class="cat-icon">👕</div>
-          <h3>Clothes</h3>
-          <p>Shirts, Tees &amp; More</p>
-        </div>
-        <div class="cat-card" onclick="filterAndGo('Shoes')">
-          <div class="cat-icon">👟</div>
-          <h3>Shoes</h3>
-          <p>Sneakers, Boots &amp; More</p>
-        </div>
-        <div class="cat-card" onclick="filterAndGo('Men')">
-          <div class="cat-icon">🧔</div>
-          <h3>Men</h3>
-          <p>Fashion &amp; Accessories</p>
-        </div>
-        <div class="cat-card" onclick="filterAndGo('Women')">
-          <div class="cat-icon">👩</div>
-          <h3>Women</h3>
-          <p>Kurtas, Sarees &amp; More</p>
-        </div>
-        <div class="cat-card" onclick="filterAndGo('Kids')">
-          <div class="cat-icon">🧒</div>
-          <h3>Kids</h3>
-          <p>Toys, Bags &amp; Clothes</p>
-        </div>
+      <div class="cat-card" onclick="filterAndGo('Samsung')">
+        <img class="cat-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/samsung.svg" alt="Samsung logo">
+        <h3>Samsung</h3>
+        <p>Smartphones, Tablets &amp; More</p>
+      </div>
+      <div class="cat-card" onclick="filterAndGo('RealME')">
+        <img class="cat-icon"  src="https://i.pinimg.com/736x/52/08/54/5208549cef538035ccac51f1e91e458d.jpg"  alt="RealME logo" onerror="this.style.display='none';">
+        <h3>RealME</h3>
+        <p>Smartphones &amp; More</p>
+      </div>
+      <div class="cat-card" onclick="filterAndGo('Oppo')">
+        <img class="cat-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/oppo.svg" alt="Oppo logo">
+        <h3>Oppo</h3>
+        <p>Smartphones &amp; More</p>
+      </div>
+      <div class="cat-card" onclick="filterAndGo('Vivo')">
+        <img class="cat-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/vivo.svg" alt="Vivo logo">
+        <h3>Vivo</h3>
+        <p>Smartphones &amp; More</p>
+      </div>
+      <div class="cat-card" onclick="filterAndGo('OnePlus')">
+        <img class="cat-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/oneplus.svg" alt="OnePlus logo">
+        <h3>OnePlus</h3>
+        <p>Smartphones, earphones &amp; More</p>
       </div>
     </div>
-  </section>
+  </div>
+</section> 
 
   <!-- Featured Products -->
   <section class="featured-section">
@@ -144,22 +145,22 @@
       <div class="filter-group">
         <h4>Category</h4>
         <label class="filter-check"><input type="checkbox" value="All" id="catAll" checked onchange="applyFilters()"/> All</label>
-        <label class="filter-check"><input type="checkbox" value="Stationery" onchange="applyFilters()"/> Stationery</label>
-        <label class="filter-check"><input type="checkbox" value="Clothes" onchange="applyFilters()"/> Clothes</label>
-        <label class="filter-check"><input type="checkbox" value="Shoes" onchange="applyFilters()"/> Shoes</label>
-        <label class="filter-check"><input type="checkbox" value="Men" onchange="applyFilters()"/> Men</label>
-        <label class="filter-check"><input type="checkbox" value="Women" onchange="applyFilters()"/> Women</label>
-        <label class="filter-check"><input type="checkbox" value="Kids" onchange="applyFilters()"/> Kids</label>
+        <label class="filter-check"><input type="checkbox" value="Apple" onchange="applyFilters()"/> Apple</label>
+        <label class="filter-check"><input type="checkbox" value="Samsung" onchange="applyFilters()"/> Samsung</label>
+        <label class="filter-check"><input type="checkbox" value="RealME" onchange="applyFilters()"/> RealME</label>
+        <label class="filter-check"><input type="checkbox" value="Oppo" onchange="applyFilters()"/> Oppo</label>
+        <label class="filter-check"><input type="checkbox" value="Vivo" onchange="applyFilters()"/> Vivo</label>
+        <label class="filter-check"><input type="checkbox" value="OnePlus" onchange="applyFilters()"/> OnePlus</label>
       </div>
 
       <div class="filter-group">
         <h4>Price Range</h4>
         <select id="priceFilter" onchange="applyFilters()" class="filter-select">
           <option value="all">All Prices</option>
-          <option value="under500">Under ₹500</option>
-          <option value="500-1000">₹500 – ₹1000</option>
-          <option value="1000-2000">₹1000 – ₹2000</option>
-          <option value="above2000">Above ₹2000</option>
+          <option value="under500">Under ₹20000</option>
+          <option value="500-1000">₹20000 – ₹40000</option>
+          <option value="1000-2000">₹40000 – ₹60000</option>
+          <option value="above2000">Above ₹100000</option>
         </select>
       </div>
 
@@ -257,75 +258,75 @@
   </div>
 
   <div class="container about-content">
-    <div class="about-grid">
+    <div class="about-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
       <div class="about-card">
-        <div class="about-icon">🌐</div>
-        <h3>Our Story</h3>
-        <p>ShopSphere was founded in 2020 with a simple idea: make quality products accessible to everyone. From stationery to fashion, we curate the best products across all categories to ensure you always find what you need.</p>
+        <div class="about-icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌐</div>
+        <h3 style="font-size: 1.2rem; margin: 0.5rem 0;">Our Story</h3>
+        <p style="font-size: 0.95rem; line-height: 1.4;">ShopSphere was founded in 2020 with a simple idea: make quality products accessible to everyone. From stationery to fashion, we curate the best products across all categories to ensure you always find what you need.</p>
       </div>
       <div class="about-card">
-        <div class="about-icon">🎯</div>
-        <h3>Our Mission</h3>
-        <p>To deliver an unparalleled shopping experience with authentic products, competitive prices, and fast delivery. We believe shopping should be joyful, simple, and trustworthy.</p>
+        <div class="about-icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎯</div>
+        <h3 style="font-size: 1.2rem; margin: 0.5rem 0;">Our Mission</h3>
+        <p style="font-size: 0.95rem; line-height: 1.4;">To deliver an unparalleled shopping experience with authentic products, competitive prices, and fast delivery. We believe shopping should be joyful, simple, and trustworthy.</p>
       </div>
       <div class="about-card">
-        <div class="about-icon">💎</div>
-        <h3>Our Values</h3>
-        <p>Quality over quantity. Customer satisfaction above all. We carefully vet every product on our platform to ensure it meets our high standards for durability and design.</p>
+        <div class="about-icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;">💎</div>
+        <h3 style="font-size: 1.2rem; margin: 0.5rem 0;">Our Values</h3>
+        <p style="font-size: 0.95rem; line-height: 1.4;">Quality over quantity. Customer satisfaction above all. We carefully vet every product on our platform to ensure it meets our high standards for durability and design.</p>
       </div>
     </div>
 
-    <div class="about-stats">
-      <div class="stat-card"><span class="stat-num">50K+</span><p>Happy Customers</p></div>
-      <div class="stat-card"><span class="stat-num">1000+</span><p>Products Listed</p></div>
-      <div class="stat-card"><span class="stat-num">4.8★</span><p>Average Rating</p></div>
-      <div class="stat-card"><span class="stat-num">100+</span><p>Cities Served</p></div>
+    <div class="about-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+      <div class="stat-card"><span class="stat-num" style="font-size: 1.8rem;">50K+</span><p style="margin: 0.5rem 0; font-size: 0.9rem;">Happy Customers</p></div>
+      <div class="stat-card"><span class="stat-num" style="font-size: 1.8rem;">1000+</span><p style="margin: 0.5rem 0; font-size: 0.9rem;">Products Listed</p></div>
+      <div class="stat-card"><span class="stat-num" style="font-size: 1.8rem;">4.8★</span><p style="margin: 0.5rem 0; font-size: 0.9rem;">Average Rating</p></div>
+      <div class="stat-card"><span class="stat-num" style="font-size: 1.8rem;">100+</span><p style="margin: 0.5rem 0; font-size: 0.9rem;">Cities Served</p></div>
     </div>
 
-    <div class="contact-section">
-      <h2>Get In Touch</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <span>📧</span>
-          <div><strong>Email Support</strong><p>tousifwebwork@gmail.com</p></div>
+    <div class="contact-section" style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Get In Touch</h2>
+      <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+        <div class="contact-item" style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="font-size: 1.8rem;">📧</span>
+          <div><strong style="font-size: 0.95rem;">Email Support</strong><p style="margin: 0.25rem 0; font-size: 0.85rem;">tousifwebwork@gmail.com</p></div>
         </div>
-        <div class="contact-item">
-          <span>📞</span>
-          <div><strong>Phone Support</strong><p>+91 7776069948</p></div>
+        <div class="contact-item" style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="font-size: 1.8rem;">📞</span>
+          <div><strong style="font-size: 0.95rem;">Phone Support</strong><p style="margin: 0.25rem 0; font-size: 0.85rem;">+91 7776069948</p></div>
         </div>
-        <div class="contact-item">
-          <span>⏰</span>
-          <div><strong>Working Hours</strong><p>Mon – Sat: 9 AM – 7 PM</p></div>
+        <div class="contact-item" style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="font-size: 1.8rem;">⏰</span>
+          <div><strong style="font-size: 0.95rem;">Working Hours</strong><p style="margin: 0.25rem 0; font-size: 0.85rem;">Mon – Sat: 9 AM – 7 PM</p></div>
         </div>
-        <div class="contact-item">
-          <span>📍</span>
-          <div><strong>Headquarters</strong><p>RIT Goa, India</p></div>
+        <div class="contact-item" style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="font-size: 1.8rem;">📍</span>
+          <div><strong style="font-size: 0.95rem;">Headquarters</strong><p style="margin: 0.25rem 0; font-size: 0.85rem;">RIT Goa, India</p></div>
         </div>
       </div>
     </div>
 
     <div class="team-section">
-      <h2>Meet Our Team</h2>
-      <div class="team-grid">
+      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Meet Our Team</h2>
+      <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; text-align: center;">
         <div class="team-card">
-          <img src="https://picsum.photos/seed/person1/100/100" alt="Aarav Shah"/>
-          <h4>Mohammad Tousif</h4>
-          <p>Founder &amp; CEO</p>
+          <img src="https://picsum.photos/seed/person1/100/100" alt="Mohammad Tousif" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 0.5rem;"/>
+          <h4 style="font-size: 1rem; margin: 0.5rem 0;">Mohammad Tousif</h4>
+          <p style="font-size: 0.85rem; margin: 0;">Founder &amp; CEO</p>
         </div>
         <div class="team-card">
-          <img src="https://picsum.photos/seed/person2/100/100" alt="Priya Nair"/>
-          <h4>Manish Sharma</h4>
-          <p>Head of Products</p>
+          <img src="https://picsum.photos/seed/person2/100/100" alt="Manish Sharma" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 0.5rem;"/>
+          <h4 style="font-size: 1rem; margin: 0.5rem 0;">Manish Sharma</h4>
+          <p style="font-size: 0.85rem; margin: 0;">Head of Products</p>
         </div>
         <div class="team-card">
-          <img src="https://picsum.photos/seed/person3/100/100" alt="Rohan Mehta"/>
-          <h4>Laxmi</h4>
-          <p>Lead Developer</p>
+          <img src="https://picsum.photos/seed/person3/100/100" alt="Laxmi" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 0.5rem;"/>
+          <h4 style="font-size: 1rem; margin: 0.5rem 0;">Laxmi</h4>
+          <p style="font-size: 0.85rem; margin: 0;">Lead Developer</p>
         </div>
         <div class="team-card">
-          <img src="https://picsum.photos/seed/person4/100/100" alt="Sneha Kapoor"/>
-          <h4>Prapti</h4>
-          <p>Marketing Director</p>
+          <img src="https://picsum.photos/seed/person4/100/100" alt="Prapti" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 0.5rem;"/>
+          <h4 style="font-size: 1rem; margin: 0.5rem 0;">Prapti</h4>
+          <p style="font-size: 0.85rem; margin: 0;">Marketing Director</p>
         </div>
       </div>
     </div>
