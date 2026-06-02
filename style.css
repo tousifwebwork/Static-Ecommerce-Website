@@ -1373,7 +1373,7 @@ input, select, textarea { font-family: var(--font); }
   opacity: 1;
   transform: translateY(0);
 }
-
+ 
 /* ============================================================
    ANIMATIONS
    ============================================================ */
@@ -1419,13 +1419,14 @@ input, select, textarea { font-family: var(--font); }
   .about-stats { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: repeat(2, 1fr); }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
+
 }
 
 @media (max-width: 768px) {
   /* Header */
   .nav {
     position: fixed;
-    top: 68px;
+    top: 0px;
     left: 0;
     right: 0;
     background: var(--bg-white);
@@ -1438,7 +1439,7 @@ input, select, textarea { font-family: var(--font); }
     transition: transform .3s ease;
     z-index: 999;
   }
-  .nav.open { transform: translateY(0); }
+  .nav.open { transform: translateY(70px); }
   .nav-link { width: 100%; padding: 12px 16px; }
   .hamburger { display: flex; }
   .search-wrap input { width: 120px; }
@@ -1476,7 +1477,7 @@ input, select, textarea { font-family: var(--font); }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
 
   /* Footer */
-  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr;  }
 
   /* Checkout */
   .form-row { grid-template-columns: 1fr; }
@@ -1495,6 +1496,8 @@ input, select, textarea { font-family: var(--font); }
   .coupon-apply-btn {
     width: 100%;
   }
+
+  
 }
 
 @media (max-width: 480px) {
@@ -1508,4 +1511,31 @@ input, select, textarea { font-family: var(--font); }
   .about-stats { grid-template-columns: 1fr 1fr; }
   .toast { bottom: 16px; right: 16px; left: 16px; text-align: center; }
 
+}
+
+
+@media (max-width: 599px){
+  /* .container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  } */
+   #abc{
+     margin-top: -204px;
+     margin-left: 220px;
+   }
+
+    #abcd{ 
+     margin-left: 40px;
+   }
+
+   #abcdefg{
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+
+   #lll{
+     margin-left: -200px;
+   }
 }
