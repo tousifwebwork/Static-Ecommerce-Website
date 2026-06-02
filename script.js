@@ -6,79 +6,670 @@
 // ─────────────────────────────────────────────
 // PRODUCT DATA – 60+ products across 6 categories
 // ─────────────────────────────────────────────
+  
 const products = [
-  // STATIONERY (10)
-  { id: 1,  name: "Premium Fountain Pen Set",         category: "Stationery", price: 699,  rating: 4.6, discount: 15, img: "https://picsum.photos/seed/pen1/400/400",     desc: "Elegant stainless steel fountain pen with ink cartridges. Smooth writing experience for professionals and students alike.", isNew: false },
-  { id: 2,  name: "Hardcover Bullet Journal A5",      category: "Stationery", price: 349,  rating: 4.8, discount: 0,  img: "https://picsum.photos/seed/journal1/400/400", desc: "Dot-grid hardcover journal with 200 cream pages. Ideal for journaling, planning, and sketching.", isNew: true },
-  { id: 3,  name: "Pastel Highlighter Set (6-Pack)",  category: "Stationery", price: 199,  rating: 4.5, discount: 10, img: "https://picsum.photos/seed/high1/400/400",    desc: "6 vibrant pastel highlighters in chisel tips. Perfect for notes and study sessions.", isNew: false },
-  { id: 4,  name: "Geometric Pencil Case",            category: "Stationery", price: 299,  rating: 4.3, discount: 0,  img: "https://picsum.photos/seed/pcase1/400/400",   desc: "Spacious zippered pencil case with geometric pattern. Holds pens, pencils, and accessories.", isNew: false },
-  { id: 5,  name: "Mechanical Pencil 0.5mm Pro",      category: "Stationery", price: 249,  rating: 4.7, discount: 5,  img: "https://picsum.photos/seed/mpencil1/400/400", desc: "Professional mechanical pencil with retractable tip. Anti-slip grip and built-in eraser.", isNew: true },
-  { id: 6,  name: "Sticky Note Mega Pack (500 Pcs)",  category: "Stationery", price: 179,  rating: 4.4, discount: 0,  img: "https://picsum.photos/seed/sticky1/400/400",  desc: "500 assorted sticky notes in 5 bright colors. Strong adhesive, removes cleanly.", isNew: false },
-  { id: 7,  name: "Canvas Art Sketchbook A4",         category: "Stationery", price: 449,  rating: 4.6, discount: 12, img: "https://picsum.photos/seed/sketch1/400/400",  desc: "100-page thick canvas sketchbook for pencil, ink, and watercolors.", isNew: false },
-  { id: 8,  name: "Wooden Desk Organizer 5-Slot",     category: "Stationery", price: 599,  rating: 4.5, discount: 0,  img: "https://picsum.photos/seed/desk1/400/400",    desc: "Bamboo desk organizer with 5 compartments. Keeps your workspace neat and stylish.", isNew: false },
-  { id: 9,  name: "Washi Tape Collection (12-Pack)",  category: "Stationery", price: 319,  rating: 4.8, discount: 8,  img: "https://picsum.photos/seed/washi1/400/400",   desc: "12 decorative washi tapes with floral and geometric patterns. Perfect for journaling.", isNew: true },
-  { id: 10, name: "Ballpoint Pen Jar Set (20 Pcs)",   category: "Stationery", price: 149,  rating: 4.2, discount: 0,  img: "https://picsum.photos/seed/bpen1/400/400",    desc: "20 smooth-writing ballpoint pens in assorted colors. Great for office and home use.", isNew: false },
-
-  // CLOTHES (10)
-  { id: 11, name: "Classic Oxford Cotton Shirt",      category: "Clothes", price: 1299, rating: 4.5, discount: 20, img: "https://picsum.photos/seed/shirt1/400/400",  desc: "Crisp oxford cotton shirt with button-down collar. Versatile for formal and casual wear.", isNew: false },
-  { id: 12, name: "Slim Fit Denim Jeans",             category: "Clothes", price: 1899, rating: 4.7, discount: 0,  img: "https://picsum.photos/seed/jeans1/400/400",  desc: "Slim fit stretch denim jeans with five-pocket design. Comfortable all-day wear.", isNew: true },
-  { id: 13, name: "Premium Hoodie – Charcoal",        category: "Clothes", price: 1499, rating: 4.8, discount: 10, img: "https://picsum.photos/seed/hoodie1/400/400", desc: "Soft fleece-lined hoodie with kangaroo pocket. Perfect for casual and loungewear.", isNew: false },
-  { id: 14, name: "Graphic Print Round Neck Tee",     category: "Clothes", price: 499,  rating: 4.3, discount: 0,  img: "https://picsum.photos/seed/tee1/400/400",    desc: "100% cotton round neck tee with unique graphic print. Comfortable and stylish.", isNew: false },
-  { id: 15, name: "Cargo Shorts – Olive Green",       category: "Clothes", price: 799,  rating: 4.4, discount: 15, img: "https://picsum.photos/seed/cargo1/400/400",  desc: "Multi-pocket cargo shorts in olive green. Lightweight and breathable for summer.", isNew: true },
-  { id: 16, name: "Linen Blend Kurta Set",            category: "Clothes", price: 1699, rating: 4.6, discount: 0,  img: "https://picsum.photos/seed/kurta1/400/400",  desc: "Elegant linen blend kurta with matching pants. Ideal for festivals and casual outings.", isNew: false },
-  { id: 17, name: "Oversized Sweatshirt – Navy",      category: "Clothes", price: 1099, rating: 4.7, discount: 5,  img: "https://picsum.photos/seed/sweat1/400/400",  desc: "Cozy oversized sweatshirt in deep navy. Drop-shoulder design with ribbed hem.", isNew: false },
-  { id: 18, name: "Chino Pants – Beige",              category: "Clothes", price: 1399, rating: 4.5, discount: 0,  img: "https://picsum.photos/seed/chino1/400/400",  desc: "Classic chino pants in beige with a straight-leg fit. Great for office and casual wear.", isNew: false },
-  { id: 19, name: "Striped Polo T-Shirt",             category: "Clothes", price: 699,  rating: 4.4, discount: 10, img: "https://picsum.photos/seed/polo1/400/400",   desc: "Classic striped polo shirt with collar and buttoned placket. Soft pique cotton fabric.", isNew: true },
-  { id: 20, name: "Windbreaker Jacket – Teal",        category: "Clothes", price: 2499, rating: 4.8, discount: 18, img: "https://picsum.photos/seed/jacket1/400/400", desc: "Lightweight windbreaker jacket with water-resistant coating. Ideal for outdoor activities.", isNew: false },
-
-  // SHOES (10)
-  { id: 21, name: "Air Cushion Running Sneakers",     category: "Shoes", price: 2999, rating: 4.7, discount: 20, img: "https://picsum.photos/seed/sneak1/400/400", desc: "Advanced air-cushion sole running sneakers with breathable mesh upper. Superior comfort for long runs.", isNew: true },
-  { id: 22, name: "Classic White Leather Sneakers",   category: "Shoes", price: 1999, rating: 4.8, discount: 0,  img: "https://picsum.photos/seed/wsneak1/400/400",desc: "Timeless white leather sneakers with rubber sole. Pairs with almost everything in your wardrobe.", isNew: false },
-  { id: 23, name: "Derby Formal Leather Shoes",       category: "Shoes", price: 3499, rating: 4.6, discount: 10, img: "https://picsum.photos/seed/derby1/400/400", desc: "Genuine leather derby shoes with cushioned insole. Perfect for formal occasions and office wear.", isNew: false },
-  { id: 24, name: "Casual Slip-On Loafers",           category: "Shoes", price: 1499, rating: 4.5, discount: 0,  img: "https://picsum.photos/seed/loafer1/400/400",desc: "Comfortable slip-on loafers in soft suede finish. Easy to wear and stylish.", isNew: false },
-  { id: 25, name: "High-Top Basketball Shoes",        category: "Shoes", price: 3999, rating: 4.7, discount: 15, img: "https://picsum.photos/seed/bball1/400/400", desc: "High-top basketball shoes with ankle support and non-slip sole. Designed for peak performance.", isNew: true },
-  { id: 26, name: "Chunky Sole Boots – Brown",        category: "Shoes", price: 2799, rating: 4.6, discount: 0,  img: "https://picsum.photos/seed/boot1/400/400",  desc: "Trendy chunky-sole ankle boots in brown. Zipper closure with durable synthetic upper.", isNew: false },
-  { id: 27, name: "Trail Hiking Shoes",               category: "Shoes", price: 2499, rating: 4.8, discount: 12, img: "https://picsum.photos/seed/hike1/400/400",   desc: "Rugged trail hiking shoes with anti-slip grip. Waterproof and breathable for outdoor adventures.", isNew: false },
-  { id: 28, name: "Canvas Espadrilles – Multicolor",  category: "Shoes", price: 899,  rating: 4.3, discount: 0,  img: "https://picsum.photos/seed/espa1/400/400",  desc: "Lightweight canvas espadrilles with jute sole. Casual and colorful for summer days.", isNew: false },
-  { id: 29, name: "Knit Sock Sneakers",               category: "Shoes", price: 1799, rating: 4.5, discount: 8,  img: "https://picsum.photos/seed/knit1/400/400",   desc: "Seamless knit upper sneakers with stretch fit. Ultra-lightweight and flexible for everyday wear.", isNew: true },
-  { id: 30, name: "Boat Shoes – Dark Blue",           category: "Shoes", price: 1999, rating: 4.4, discount: 0,  img: "https://picsum.photos/seed/boat1/400/400",   desc: "Classic boat shoes in dark blue with non-marking sole. Great for nautical and casual looks.", isNew: false },
-
-  // MEN (10)
-  { id: 31, name: "Premium Leather Wallet",           category: "Men", price: 899,  rating: 4.7, discount: 0,  img: "https://picsum.photos/seed/wallet1/400/400", desc: "Slim bifold genuine leather wallet with RFID blocking. 6 card slots and a large bill compartment.", isNew: false },
-  { id: 32, name: "Aviator Sunglasses – Gold",        category: "Men", price: 1299, rating: 4.6, discount: 15, img: "https://picsum.photos/seed/sunglass1/400/400",desc: "Classic aviator sunglasses with UV400 protection and gold metal frame. Timeless and stylish.", isNew: true },
-  { id: 33, name: "Chronograph Watch – Silver",       category: "Men", price: 4999, rating: 4.8, discount: 10, img: "https://picsum.photos/seed/watch1/400/400",  desc: "Stainless steel chronograph watch with mineral crystal glass. Water resistant up to 30m.", isNew: false },
-  { id: 34, name: "Men's Formal Belt – Black",        category: "Men", price: 599,  rating: 4.4, discount: 0,  img: "https://picsum.photos/seed/belt1/400/400",   desc: "Genuine leather formal belt with silver pin buckle. Ideal for office and formal events.", isNew: false },
-  { id: 35, name: "Beaded Bracelet Stack Set",        category: "Men", price: 399,  rating: 4.5, discount: 5,  img: "https://picsum.photos/seed/brace1/400/400",  desc: "Set of 3 beaded bracelets in natural stone and wood. Adjustable sizing, great layering pieces.", isNew: true },
-  { id: 36, name: "Canvas Backpack – Dark Olive",     category: "Men", price: 1699, rating: 4.7, discount: 20, img: "https://picsum.photos/seed/mpack1/400/400",  desc: "15L canvas backpack with laptop sleeve and multiple pockets. Durable and stylish for daily commute.", isNew: false },
-  { id: 37, name: "Men's Grooming Kit",               category: "Men", price: 1099, rating: 4.6, discount: 0,  img: "https://picsum.photos/seed/groom1/400/400",  desc: "Complete grooming kit with beard trimmer, scissors, comb, and travel pouch.", isNew: false },
-  { id: 38, name: "Muscle Fit Gym T-Shirt",           category: "Men", price: 499,  rating: 4.3, discount: 0,  img: "https://picsum.photos/seed/gym1/400/400",    desc: "Sweat-wicking muscle fit gym tee. Designed for performance with stretch fabric.", isNew: false },
-  { id: 39, name: "Slim Fit Blazer – Navy",           category: "Men", price: 3499, rating: 4.8, discount: 25, img: "https://picsum.photos/seed/blazer1/400/400", desc: "Sharp slim-fit blazer in navy with notch lapels. Perfect for semi-formal and business events.", isNew: true },
-  { id: 40, name: "Leather Card Holder Slim",         category: "Men", price: 499,  rating: 4.5, discount: 0,  img: "https://picsum.photos/seed/cardholder1/400/400", desc: "Ultra-slim genuine leather card holder. Holds up to 6 cards in a minimalist design.", isNew: false },
-
-  // WOMEN (10)
-  { id: 41, name: "Embroidered Anarkali Kurti",       category: "Women", price: 1899, rating: 4.8, discount: 15, img: "https://picsum.photos/seed/anarkali1/400/400",desc: "Beautifully embroidered anarkali kurti in cotton blend. Ideal for festive and casual occasions.", isNew: true },
-  { id: 42, name: "Floral Wrap Midi Dress",           category: "Women", price: 1499, rating: 4.6, discount: 0,  img: "https://picsum.photos/seed/dress1/400/400",  desc: "Elegant floral print wrap midi dress with adjustable belt. Flattering silhouette for all body types.", isNew: false },
-  { id: 43, name: "Gold Layered Necklace Set",        category: "Women", price: 799,  rating: 4.7, discount: 10, img: "https://picsum.photos/seed/necklace1/400/400",desc: "Delicate gold-tone layered necklace set with star and moon pendants.", isNew: false },
-  { id: 44, name: "High-Waist Yoga Leggings",         category: "Women", price: 899,  rating: 4.8, discount: 0,  img: "https://picsum.photos/seed/legg1/400/400",   desc: "4-way stretch high-waist leggings with hidden pocket. Perfect for yoga, gym, and casual wear.", isNew: false },
-  { id: 45, name: "Silk Saree – Royal Blue",          category: "Women", price: 3999, rating: 4.9, discount: 20, img: "https://picsum.photos/seed/saree1/400/400",   desc: "Stunning royal blue silk saree with zari border. Comes with a matching blouse piece.", isNew: true },
-  { id: 46, name: "Women's Tote Bag – Beige",         category: "Women", price: 1299, rating: 4.5, discount: 0,  img: "https://picsum.photos/seed/tote1/400/400",   desc: "Spacious canvas tote bag with inner zip pocket and magnetic closure. Stylish and practical.", isNew: false },
-  { id: 47, name: "Block Heel Sandals – Tan",         category: "Women", price: 1599, rating: 4.4, discount: 12, img: "https://picsum.photos/seed/sandal1/400/400",  desc: "Comfortable block heel sandals in tan with adjustable ankle strap. Elegant and supportive.", isNew: false },
-  { id: 48, name: "Flared Palazzos – Ivory",          category: "Women", price: 799,  rating: 4.6, discount: 5,  img: "https://picsum.photos/seed/palazzo1/400/400", desc: "Breezy flared palazzo pants in ivory. Lightweight and comfortable for summer days.", isNew: true },
-  { id: 49, name: "Studded Hoop Earrings",            category: "Women", price: 399,  rating: 4.5, discount: 0,  img: "https://picsum.photos/seed/earring1/400/400", desc: "Gold-plated studded hoop earrings. Lightweight and hypoallergenic for sensitive ears.", isNew: false },
-  { id: 50, name: "Satin Slip Nightdress",            category: "Women", price: 1099, rating: 4.7, discount: 8,  img: "https://picsum.photos/seed/night1/400/400",   desc: "Soft satin slip nightdress with lace trim. Comfortable and luxurious sleepwear.", isNew: false },
-
-  // KIDS (10)
-  { id: 51, name: "Kids School Bag – Space Print",    category: "Kids", price: 799,  rating: 4.7, discount: 0,  img: "https://picsum.photos/seed/kidsbag1/400/400",  desc: "Spacious school bag with space-themed print. Multiple compartments and ergonomic straps.", isNew: true },
-  { id: 52, name: "Building Blocks Set (200 Pcs)",    category: "Kids", price: 999,  rating: 4.8, discount: 10, img: "https://picsum.photos/seed/blocks1/400/400",   desc: "200-piece colorful building blocks set. Compatible with all major brick brands. Ages 3+.", isNew: false },
-  { id: 53, name: "Children's Art Kit",               category: "Kids", price: 699,  rating: 4.6, discount: 0,  img: "https://picsum.photos/seed/artkit1/400/400",   desc: "Complete art kit with crayons, watercolors, brushes, and sketchbook. Sparks creativity in kids.", isNew: false },
-  { id: 54, name: "Kids Denim Dungarees",             category: "Kids", price: 899,  rating: 4.5, discount: 15, img: "https://picsum.photos/seed/dungaree1/400/400", desc: "Adorable denim dungarees with adjustable straps. Durable and comfortable for active kids.", isNew: false },
-  { id: 55, name: "Light-Up Sports Sneakers",         category: "Kids", price: 1299, rating: 4.7, discount: 0,  img: "https://picsum.photos/seed/ksneak1/400/400",   desc: "Fun light-up LED sneakers with velcro closure. Easy to wear and durable sole.", isNew: true },
-  { id: 56, name: "Plush Teddy Bear – 40cm",         category: "Kids", price: 599,  rating: 4.9, discount: 5,  img: "https://picsum.photos/seed/teddy1/400/400",    desc: "Super-soft 40cm plush teddy bear. Safe for all ages. Machine washable cover.", isNew: false },
-  { id: 57, name: "Kids Raincoat – Yellow",           category: "Kids", price: 699,  rating: 4.6, discount: 0,  img: "https://picsum.photos/seed/raincoat1/400/400", desc: "Bright yellow waterproof raincoat with hood. Keeps your child dry and cheerful.", isNew: false },
-  { id: 58, name: "Wooden Puzzle Set – Animals",      category: "Kids", price: 449,  rating: 4.8, discount: 10, img: "https://picsum.photos/seed/puzzle1/400/400",   desc: "Colorful wooden animal puzzle set. Develops fine motor skills and problem-solving. Ages 2+.", isNew: false },
-  { id: 59, name: "Kids Cycle Helmet",                category: "Kids", price: 849,  rating: 4.7, discount: 0,  img: "https://picsum.photos/seed/helmet1/400/400",   desc: "Certified kids cycle helmet with adjustable straps and ventilation. Safety-first design.", isNew: true },
-  { id: 60, name: "Illustrated Story Books (Set of 5)",category:"Kids", price: 899,  rating: 4.9, discount: 8,  img: "https://picsum.photos/seed/books1/400/400",    desc: "Set of 5 beautifully illustrated story books. Age-appropriate stories that inspire imagination.", isNew: false },
-];
+  {
+    id: 1,
+    name: "Apple iPhone 16",
+    category: "Apple",
+    price: 79999,
+    rating: 4.8,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-16.jpg",
+    desc: "Apple iPhone 16 with A18 chip, advanced camera system, and all-day battery life.",
+    isNew: true
+  },
+  {
+    id: 2,
+    name: "Apple iPhone 16 Plus",
+    category: "Apple",
+    price: 89999,
+    rating: 4.8,
+    discount: 8,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-16-plus.jpg",
+    desc: "Large 6.7-inch Super Retina display with powerful A18 performance.",
+    isNew: true
+  },
+  {
+    id: 3,
+    name: "Apple iPhone 16 Pro",
+    category: "Apple",
+    price: 119999,
+    rating: 4.9,
+    discount: 5,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-16-pro.jpg",
+    desc: "Titanium design with ProMotion display and professional camera system.",
+    isNew: true
+  },
+  {
+    id: 4,
+    name: "Apple iPhone 16 Pro Max",
+    category: "Apple",
+    price: 144999,
+    rating: 5.0,
+    discount: 5,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-16-pro-max.jpg",
+    desc: "Apple flagship smartphone with premium camera and exceptional battery life.",
+    isNew: true
+  },
+  {
+    id: 5,
+    name: "Apple iPhone 15",
+    category: "Apple",
+    price: 69999,
+    rating: 4.7,
+    discount: 12,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-15.jpg",
+    desc: "Dynamic Island, A16 Bionic chip, and excellent dual-camera setup.",
+    isNew: false
+  },
+  {
+    id: 6,
+    name: "Apple iPhone 15 Plus",
+    category: "Apple",
+    price: 79999,
+    rating: 4.7,
+    discount: 10,
+    img: "https://i.pinimg.com/564x/14/7e/52/147e52bd313338ecfb911a0fbc758ad3.jpg",
+    desc: "Large display iPhone with long-lasting battery and premium design.",
+    isNew: false
+  },
+  {
+    id: 7,
+    name: "Apple iPhone 15 Pro",
+    category: "Apple",
+    price: 114999,
+    rating: 4.9,
+    discount: 8,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-15-pro.jpg",
+    desc: "Powerful A17 Pro chip and lightweight titanium construction.",
+    isNew: false
+  },
+  {
+    id: 8,
+    name: "Apple iPhone 15 Pro Max",
+    category: "Apple",
+    price: 134999,
+    rating: 4.9,
+    discount: 7,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-15-pro-max.jpg",
+    desc: "Premium flagship with advanced zoom camera and stunning display.",
+    isNew: false
+  },
+  {
+    id: 9,
+    name: "Apple iPhone 14",
+    category: "Apple",
+    price: 59999,
+    rating: 4.6,
+    discount: 15,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14.jpg",
+    desc: "Reliable iPhone with A15 Bionic processor and excellent performance.",
+    isNew: false
+  },
+  {
+    id: 10,
+    name: "Apple iPhone SE 4",
+    category: "Apple",
+    price: 49999,
+    rating: 4.5,
+    discount: 10,
+    img: "https://www.mobileana.com/wp-content/uploads/2024/10/Apple-iPhone-SE-2024.webp",
+    desc: "Compact and affordable iPhone powered by Apple silicon.",
+    isNew: true
+  },
+  {
+    id: 11,
+    name: "Samsung Galaxy S25",
+    category: "Samsung",
+    price: 84999,
+    rating: 4.8,
+    discount: 10,
+    img: "https://suprememobiles.in/cdn/shop/files/5_492b6352-ad5e-422b-85a1-d66fe4fd2915.webp?v=1770380996",
+    desc: "Premium Samsung flagship with Galaxy AI and Dynamic AMOLED display.",
+    isNew: true
+  },
+  {
+    id: 12,
+    name: "Samsung Galaxy S25+",
+    category: "Samsung",
+    price: 99999,
+    rating: 4.8,
+    discount: 8,
+    img: "https://suprememobiles.in/cdn/shop/files/5_492b6352-ad5e-422b-85a1-d66fe4fd2915.webp?v=1770380996",
+    desc: "Large-screen flagship smartphone with premium build quality.",
+    isNew: true
+  },
+  {
+    id: 13,
+    name: "Samsung Galaxy S25 Ultra",
+    category: "Samsung",
+    price: 139999,
+    rating: 5.0,
+    discount: 5,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5qMA58uDoFaHAuH_uk1lpPkiKt-TKfDmVnQ&s",
+    desc: "Ultimate Samsung flagship with S-Pen and pro-grade cameras.",
+    isNew: true
+  },
+  {
+    id: 14,
+    name: "Samsung Galaxy S24",
+    category: "Samsung",
+    price: 74999,
+    rating: 4.7,
+    discount: 12,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1wHCjPQBb4xlohIbJKn7G4sBUBesgflwTJg&s",
+    desc: "Galaxy AI features combined with flagship-level performance.",
+    isNew: false
+  },
+  {
+    id: 15,
+    name: "Samsung Galaxy S24+",
+    category: "Samsung",
+    price: 89999,
+    rating: 4.8,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s24-plus.jpg",
+    desc: "Premium Samsung smartphone with immersive AMOLED display.",
+    isNew: false
+  },
+  {
+    id: 16,
+    name: "Samsung Galaxy S24 Ultra",
+    category: "Samsung",
+    price: 129999,
+    rating: 4.9,
+    discount: 8,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s24-ultra.jpg",
+    desc: "200MP camera, S-Pen support, and exceptional battery life.",
+    isNew: false
+  },
+  {
+    id: 17,
+    name: "Samsung Galaxy A55",
+    category: "Samsung",
+    price: 39999,
+    rating: 4.6,
+    discount: 15,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a55.jpg",
+    desc: "Mid-range Samsung smartphone with premium design and cameras.",
+    isNew: true
+  },
+  {
+    id: 18,
+    name: "Samsung Galaxy A35",
+    category: "Samsung",
+    price: 29999,
+    rating: 4.5,
+    discount: 12,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-a35.jpg",
+    desc: "Affordable Samsung phone with AMOLED display and solid performance.",
+    isNew: false
+  },
+  {
+    id: 19,
+    name: "Samsung Galaxy M55",
+    category: "Samsung",
+    price: 27999,
+    rating: 4.5,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-m55.jpg",
+    desc: "Powerful battery-focused smartphone with fast charging support.",
+    isNew: true
+  },
+  {
+    id: 20,
+    name: "Samsung Galaxy F55",
+    category: "Samsung",
+    price: 25999,
+    rating: 4.4,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-f55.jpg",
+    desc: "Stylish Samsung smartphone with vegan leather finish and 5G support.",
+    isNew: true
+  },
+  {
+    id: 21,
+    name: "realme GT 7 Pro",
+    category: "RealME",
+    price: 54999,
+    rating: 4.8,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/realme-gt7-pro.jpg",
+    desc: "Flagship realme smartphone with Snapdragon processor and ultra-fast charging.",
+    isNew: true
+  },
+  {
+    id: 22,
+    name: "realme GT 6",
+    category: "RealME",
+    price: 39999,
+    rating: 4.7,
+    discount: 12,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/realme-gt6.jpg",
+    desc: "Powerful performance smartphone with premium AMOLED display.",
+    isNew: true
+  },
+  {
+    id: 23,
+    name: "realme GT Neo 6",
+    category: "RealME",
+    price: 34999,
+    rating: 4.7,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/realme-gt-neo6.jpg",
+    desc: "Gaming-focused smartphone with smooth display and fast charging.",
+    isNew: true
+  },
+  {
+    id: 24,
+    name: "realme 14 Pro+",
+    category: "RealME",
+    price: 32999,
+    rating: 4.6,
+    discount: 15,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/realme-14-pro-plus.jpg",
+    desc: "Premium mid-range smartphone with advanced camera features.",
+    isNew: true
+  },
+  {
+    id: 25,
+    name: "realme 14 Pro",
+    category: "RealME",
+    price: 28999,
+    rating: 4.6,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/realme-14-pro.jpg",
+    desc: "Elegant design with powerful processor and long-lasting battery.",
+    isNew: true
+  },
+  {
+    id: 26,
+    name: "realme Narzo 80 Pro",
+    category: "RealME",
+    price: 24999,
+    rating: 4.5,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/realme-narzo-80-pro.jpg",
+    desc: "Performance-centric smartphone built for gaming and multitasking.",
+    isNew: true
+  },
+  {
+    id: 27,
+    name: "realme Narzo 80x",
+    category: "RealME",
+    price: 18999,
+    rating: 4.4,
+    discount: 12,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/realme-narzo-80x.jpg",
+    desc: "Affordable 5G smartphone with smooth display and reliable battery.",
+    isNew: false
+  },
+  {
+    id: 28,
+    name: "realme 13+ 5G",
+    category: "RealME",
+    price: 21999,
+    rating: 4.5,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/realme-13-plus.jpg",
+    desc: "Stylish smartphone with strong camera performance and 5G support.",
+    isNew: false
+  },
+  {
+    id: 29,
+    name: "realme C75",
+    category: "RealME",
+    price: 14999,
+    rating: 4.3,
+    discount: 8,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/realme-c75.jpg",
+    desc: "Budget-friendly smartphone with large battery and modern design.",
+    isNew: false
+  },
+  {
+    id: 30,
+    name: "realme C67 5G",
+    category: "RealME",
+    price: 12999,
+    rating: 4.3,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/realme-c67-5g.jpg",
+    desc: "Entry-level 5G smartphone offering great value for money.",
+    isNew: false
+  },
+  {
+    id: 31,
+    name: "Oppo Find X8 Ultra",
+    category: "Oppo",
+    price: 99999,
+    rating: 4.9,
+    discount: 5,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oppo-find-x8-ultra.jpg",
+    desc: "Premium Oppo flagship with advanced camera technology and elegant design.",
+    isNew: true
+  },
+  {
+    id: 32,
+    name: "Oppo Find X8 Pro",
+    category: "Oppo",
+    price: 84999,
+    rating: 4.8,
+    discount: 8,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oppo-find-x8-pro.jpg",
+    desc: "Flagship smartphone with exceptional cameras and AMOLED display.",
+    isNew: true
+  },
+  {
+    id: 33,
+    name: "Oppo Find X8",
+    category: "Oppo",
+    price: 69999,
+    rating: 4.8,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oppo-find-x8.jpg",
+    desc: "High-end smartphone with premium build quality and smooth performance.",
+    isNew: true
+  },
+  {
+    id: 34,
+    name: "Oppo Reno 13 Pro",
+    category: "Oppo",
+    price: 49999,
+    rating: 4.7,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oppo-reno13-pro.jpg",
+    desc: "Camera-focused smartphone with AI photography features.",
+    isNew: true
+  },
+  {
+    id: 35,
+    name: "Oppo Reno 13",
+    category: "Oppo",
+    price: 39999,
+    rating: 4.6,
+    discount: 12,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oppo-reno13.jpg",
+    desc: "Premium mid-range smartphone with stylish design and strong cameras.",
+    isNew: true
+  },
+  {
+    id: 36,
+    name: "Oppo Reno 12 Pro",
+    category: "Oppo",
+    price: 45999,
+    rating: 4.7,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oppo-reno12-pro.jpg",
+    desc: "Smooth performance smartphone with AI-powered photography.",
+    isNew: false
+  },
+  {
+    id: 37,
+    name: "Oppo Reno 12",
+    category: "Oppo",
+    price: 34999,
+    rating: 4.5,
+    discount: 15,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oppo-reno12.jpg",
+    desc: "Balanced smartphone with vibrant display and dependable battery.",
+    isNew: false
+  },
+  {
+    id: 38,
+    name: "Oppo F29 Pro",
+    category: "Oppo",
+    price: 28999,
+    rating: 4.5,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oppo-f29-pro.jpg",
+    desc: "Performance-oriented smartphone with sleek design and 5G support.",
+    isNew: true
+  },
+  {
+    id: 39,
+    name: "Oppo A5 Pro",
+    category: "Oppo",
+    price: 19999,
+    rating: 4.4,
+    discount: 12,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oppo-a5-pro.jpg",
+    desc: "Affordable smartphone with large battery and reliable performance.",
+    isNew: false
+  },
+  {
+    id: 40,
+    name: "Oppo A3x 5G",
+    category: "Oppo",
+    price: 14999,
+    rating: 4.3,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oppo-a3x.jpg",
+    desc: "Entry-level 5G smartphone designed for everyday use.",
+    isNew: false
+  },
+  {
+    id: 41,
+    name: "Vivo X200 Ultra",
+    category: "Vivo",
+    price: 99999,
+    rating: 4.9,
+    discount: 5,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/vivo-x200-ultra.jpg",
+    desc: "Premium Vivo flagship with ZEISS cameras and cutting-edge performance.",
+    isNew: true
+  },
+  {
+    id: 42,
+    name: "Vivo X200 Pro",
+    category: "Vivo",
+    price: 84999,
+    rating: 4.8,
+    discount: 8,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/vivo-x200-pro.jpg",
+    desc: "Flagship smartphone featuring professional photography capabilities.",
+    isNew: true
+  },
+  {
+    id: 43,
+    name: "Vivo X200",
+    category: "Vivo",
+    price: 69999,
+    rating: 4.8,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/vivo-x200.jpg",
+    desc: "Powerful flagship device with premium AMOLED display and 5G support.",
+    isNew: true
+  },
+  {
+    id: 44,
+    name: "Vivo V50 Pro",
+    category: "Vivo",
+    price: 49999,
+    rating: 4.7,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/vivo-v50-pro.jpg",
+    desc: "Stylish smartphone with advanced camera features and fast charging.",
+    isNew: true
+  },
+  {
+    id: 45,
+    name: "Vivo V50",
+    category: "Vivo",
+    price: 39999,
+    rating: 4.6,
+    discount: 12,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/vivo-v50.jpg",
+    desc: "Premium mid-range smartphone with elegant design and strong performance.",
+    isNew: true
+  },
+  {
+    id: 46,
+    name: "Vivo V40 Pro",
+    category: "Vivo",
+    price: 45999,
+    rating: 4.7,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/vivo-v40-pro.jpg",
+    desc: "ZEISS-powered camera smartphone with premium curved display.",
+    isNew: false
+  },
+  {
+    id: 47,
+    name: "Vivo V40",
+    category: "Vivo",
+    price: 34999,
+    rating: 4.5,
+    discount: 15,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/vivo-v40.jpg",
+    desc: "Balanced smartphone offering excellent camera quality and battery life.",
+    isNew: false
+  },
+  {
+    id: 48,
+    name: "Vivo T4 Ultra",
+    category: "Vivo",
+    price: 29999,
+    rating: 4.5,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/vivo-t4-ultra.jpg",
+    desc: "Performance-focused smartphone with smooth display and gaming features.",
+    isNew: true
+  },
+  {
+    id: 49,
+    name: "Vivo Y300 Pro",
+    category: "Vivo",
+    price: 21999,
+    rating: 4.4,
+    discount: 12,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/vivo-y300-pro.jpg",
+    desc: "Affordable 5G smartphone with dependable performance and camera setup.",
+    isNew: false
+  },
+  {
+    id: 50,
+    name: "Vivo Y200 5G",
+    category: "Vivo",
+    price: 17999,
+    rating: 4.3,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/vivo-y200-5g.jpg",
+    desc: "Budget-friendly 5G smartphone with sleek design and long battery life.",
+    isNew: false
+  },
+  {
+    id: 51,
+    name: "OnePlus 14 Ultra",
+    category: "OnePlus",
+    price: 99999,
+    rating: 5.0,
+    discount: 5,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-13.jpg",
+    desc: "Ultimate OnePlus flagship with premium cameras and top-tier performance.",
+    isNew: true
+  },
+  {
+    id: 52,
+    name: "OnePlus 14 Pro",
+    category: "OnePlus",
+    price: 84999,
+    rating: 4.9,
+    discount: 8,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-13.jpg",
+    desc: "Flagship smartphone featuring Snapdragon processor and AMOLED display.",
+    isNew: true
+  },
+  {
+    id: 53,
+    name: "OnePlus 14",
+    category: "OnePlus",
+    price: 69999,
+    rating: 4.8,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-14.jpg",
+    desc: "Premium smartphone with OxygenOS and powerful hardware.",
+    isNew: true
+  },
+  {
+    id: 54,
+    name: "OnePlus 13",
+    category: "OnePlus",
+    price: 64999,
+    rating: 4.8,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-13.jpg",
+    desc: "High-performance flagship with exceptional battery life and cameras.",
+    isNew: true
+  },
+  {
+    id: 55,
+    name: "OnePlus 13R",
+    category: "OnePlus",
+    price: 42999,
+    rating: 4.7,
+    discount: 12,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-13r.jpg",
+    desc: "Performance-focused smartphone offering flagship-level speed.",
+    isNew: true
+  },
+  {
+    id: 56,
+    name: "OnePlus Nord 5",
+    category: "OnePlus",
+    price: 34999,
+    rating: 4.6,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-nord-4.jpg",
+    desc: "Premium mid-range smartphone with smooth display and fast charging.",
+    isNew: true
+  },
+  {
+    id: 57,
+    name: "OnePlus Nord CE 5",
+    category: "OnePlus",
+    price: 27999,
+    rating: 4.5,
+    discount: 12,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-nord-ce-4.jpg",
+    desc: "Feature-packed smartphone with clean software experience.",
+    isNew: false
+  },
+  {
+    id: 58,
+    name: "OnePlus Nord CE 4",
+    category: "OnePlus",
+    price: 24999,
+    rating: 4.5,
+    discount: 15,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-nord-ce-4.jpg",
+    desc: "Fast and efficient smartphone with excellent battery backup.",
+    isNew: false
+  },
+  {
+    id: 59,
+    name: "OnePlus Nord N40",
+    category: "OnePlus",
+    price: 19999,
+    rating: 4.4,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-nord-ce-4-lite.jpg",
+    desc: "Affordable 5G smartphone offering great value and smooth performance.",
+    isNew: false
+  },
+  {
+    id: 60,
+    name: "OnePlus Nord Lite 5G",
+    category: "OnePlus",
+    price: 15999,
+    rating: 4.3,
+    discount: 10,
+    img: "https://fdn2.gsmarena.com/vv/bigpic/oneplus-nord-ce-4-lite.jpg",
+    desc: "Entry-level 5G smartphone with modern design and reliable battery.",
+    isNew: false
+  }
+]; 
+ 
 
 // ─────────────────────────────────────────────
 // COUPON DEFINITIONS  ← edit these anytime!
@@ -278,10 +869,10 @@ function applyFilters() {
 
   // --- Price filter ---
   const priceVal = document.getElementById('priceFilter')?.value || 'all';
-  if (priceVal === 'under500')   filtered = filtered.filter(p => p.price < 500);
-  if (priceVal === '500-1000')   filtered = filtered.filter(p => p.price >= 500 && p.price <= 1000);
-  if (priceVal === '1000-2000')  filtered = filtered.filter(p => p.price >= 1000 && p.price <= 2000);
-  if (priceVal === 'above2000')  filtered = filtered.filter(p => p.price > 2000);
+  if (priceVal === 'under500')   filtered = filtered.filter(p => p.price < 20000);
+  if (priceVal === '500-1000')   filtered = filtered.filter(p => p.price >= 20000 && p.price <= 40000);
+  if (priceVal === '1000-2000')  filtered = filtered.filter(p => p.price >= 40000 && p.price <= 60000);
+  if (priceVal === 'above2000')  filtered = filtered.filter(p => p.price > 100000);
 
   // --- Sort ---
   const sortVal = document.getElementById('sortFilter')?.value || 'default';
